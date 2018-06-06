@@ -1,0 +1,17 @@
+#!/usr/bin/tclsh
+
+set search_path ""
+set search_path [concat $search_path \
+    ./source \
+    ./scripts \
+    /CMC/tools/synopsys/syn_vA-2007.12-SP5/libraries/syn \
+    /CMC/tools/synopsys/syn_vA-2007.12-SP5/dw/syn_ver \
+    /CMC/tools/synopsys/syn_vA-2007.12-SP5/dw/sim_ver]
+
+set OSU_FREEPDK "/fs1/eecg/janders/niukuang/Research/repos/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/Liberty/"
+
+set search_path [concat $search_path $OSU_FREEPDK]
+
+set link_path "* /fs1/eecg/janders/niukuang/Research/repos/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/Liberty/NangateOpenCellLibrary.db"
+
+file mkdir ./reports

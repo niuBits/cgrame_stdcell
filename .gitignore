@@ -1,0 +1,15 @@
+# HDL files
+*.v
+
+# reports and command logs
+*.log
+*.rpt
+
+# CAD generated files
+*.svf
+*.pvl
+*.syn
+*.mr
+
+# editor swp files
+*.swp

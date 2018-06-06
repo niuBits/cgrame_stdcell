@@ -1,0 +1,1 @@
+../../../2_cadence_innovus_pnr/netlist/cgra.v

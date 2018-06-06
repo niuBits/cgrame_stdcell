@@ -1,0 +1,1 @@
+ls | grep -P '\.mr$|\.pvl$|\.syn$|command.log|default.svf'  | xargs rm
