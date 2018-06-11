@@ -1,15 +1,22 @@
-# HDL files
+# HDL/Netlist files
 *.v
 
 # reports and command logs
-*.log
+*.log*
 *.rpt
+*.cmd*
+.*.rs.fp*
+*.htmreport
+*.htm*
 
 # CAD generated files
 *.svf
 *.pvl
 *.syn
 *.mr
+*.spef
+*.innovus
+*.innovus.dat
 
 # editor swp files
 *.swp

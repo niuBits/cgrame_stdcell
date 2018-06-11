@@ -1,25 +1,29 @@
 # GEOMETRY INFO: Variables below are specifically used in pin.tcl and floorplan.tcl
+
+# TODO: Manually edit the following geometry parameters
 # Chip Dimension
-# TODO: Edit geometry
-set chip_w 320
-set chip_h 384
+set core_w 330
+set core_aspect_ratio 1.2
 # DRF Height
 set drf_io_h 35
+# Core Margin
+set margin 5
+
+# BEGIN - Inferred Geometries
+# Core Height ( = coreWidth * aspectRatio)
+set core_h [expr $core_w*$core_aspect_ratio]
 # PE Grid Dimension
-set grid_w $chip_w
-set grid_h [expr $chip_h-$drf_io_h]
+set grid_w $core_w
+set grid_h [expr $core_h-$drf_io_h]
 # PE Dimension
 set w [expr $grid_w/4]
 set h [expr $grid_h/4]
+# END - Inferred Geometries
 
 # ADRES Floor Planning:
-# - Top side needs more space for DRF, hence aspectratio(h/w) = 1.2
-# - ContentArea / CoreArea = 0.85
-# - Margin of 5 units top, bottom, left, & right margins
-floorPlan -site FreePDK45_38x28_10R_NP_162NW_34O -r 1.2 0.85 5 5 5 5
-source src/adres_pin.tcl
+floorPlan -site FreePDK45_38x28_10R_NP_162NW_34O -s $core_w $core_h $margin $margin $margin $margin
 fit
-
+source src/adres_pin.tcl
 source src/adres_floorplan.tcl
 
 # Add Power Ring:
@@ -43,6 +47,8 @@ addRing \
     -nets {VSS VDD}
 
 # Place Std Cells
+setMultiCpuUsage -localCpu max
 setPlaceMode -fp false
 placeDesign -prePlaceOpt
+win
 

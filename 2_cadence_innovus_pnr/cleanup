@@ -1,1 +1,14 @@
-ls | grep -P '\.mr$|\.pvl$|\.syn$|command.log|default.svf'  | xargs rm
+#!/bin/bash
+
+#ls | grep -P '\.mr$|\.pvl$|\.syn$|command.log|default.svf' | xargs rm
+rm innovus.cmd*
+rm innovus.log*
+rm .cgra*.rs.fp*
+rm -rf .cadence
+rm -rf cgra_via_layer_via*.htmreport
+rm report/*
+rm netlist/*.v
+rm netlist/*.spef
+rm cgra.innovus
+rm -rf cgra.innovus.dat
+rm CTE_loops.rpt

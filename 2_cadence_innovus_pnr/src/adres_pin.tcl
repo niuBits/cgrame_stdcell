@@ -1,5 +1,5 @@
-editPin -pin [list CGRA_Clock CGRA_Reset] -side LEFT -spreadType CENTER -layer M1 -spacing [expr $chip_h/10]
-editPin -pin [list Config_Clock Config_Reset ConfigIn ConfigOut] -side BOTTOM -spreadType CENTER -layer M1 -spacing [expr $chip_w/10]
+editPin -pin [list CGRA_Clock CGRA_Reset] -side LEFT -spreadType CENTER -layer M1 -spacing [expr $core_h/10]
+editPin -pin [list Config_Clock Config_Reset ConfigIn ConfigOut] -side BOTTOM -spreadType CENTER -layer M1 -spacing [expr $core_w/10]
 set ext_io_top_pins [list \
     ext_io_top_0[0]  \
     ext_io_top_0[1]  \
