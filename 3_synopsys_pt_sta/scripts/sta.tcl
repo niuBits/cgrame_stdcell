@@ -29,7 +29,8 @@ set_clock_uncertainty 1.2 -setup [get_clocks Config_Clock]
 set_clock_uncertainty 0.5 -hold [get_clocks Config_Clock]
 
 #Read Synopsys Design Constraints
-source ./const/adres.sdc
+#source ./const/adres.sdc
+source ./const/mac.sdc
 
 #Report Timing: (`-max_paths` specifies the numbers of reported worst cases)
 #    1) primary inputs -> FFs
