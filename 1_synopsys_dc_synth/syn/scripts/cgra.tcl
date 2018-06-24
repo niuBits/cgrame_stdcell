@@ -1,10 +1,10 @@
 variable top_level_design cgra cgra
 # TODO: Set list of modules to retain hierarchy separation, e.g. "io", "RegisterFile_1_2", etc.
-variable dont_touches {}
+variable dont_touches {"configCell_1b" "configCell_2b" "configCell_3b" "configCell_4b" "configCell_32b" "const_32b" "memUnit_32b" "mux_2to1_32b" "mux_4to1_32b" "mux_5to1_32b" "mux_6to1_32b" "mux_7to1_32b" "mux_8to1_32b" "op_add_32b" "op_and_32b" "op_ashr_32b" "op_lshr_32b" "op_multiply_32b" "op_or_32b" "op_shl_32b" "op_sub_32b" "op_xor_32b" "registerFile_1in_2out_32b" "registerFile_4in_8out_32b" "register_32b" "tristate_32b" "adres_5in_vliw" "adres_6in_vliw" "io_32b"}
 
 # Generate design IR(analyze) -> build(elaborate)
 # TODO: Set list to name all original HDL verilog files
-analyze -f verilog -library work [list ]
+analyze -f verilog -library work [list adres_5in_vliw.v adres_6in_vliw.v cgra.v configCell_1b.v configCell_2b.v configCell_32b.v configCell_3b.v configCell_4b.v const_32b.v func_32b_add_multiply_sub_and_or_xor_shl_ashr_lshr.v io_32b.v memUnit_32b.v memoryPort_4connect_32b.v mux_2to1_32b.v mux_4to1_32b.v mux_5to1_32b.v mux_6to1_32b.v mux_7to1_32b.v mux_8to1_32b.v op_add_32b.v op_and_32b.v op_ashr_32b.v op_lshr_32b.v op_multiply_32b.v op_or_32b.v op_shl_32b.v op_sub_32b.v op_xor_32b.v registerFile_1in_2out_32b.v registerFile_4in_8out_32b.v register_32b.v tristate_32b.v]
 
 # Tag all modules keeping for hierarchy
 foreach mod $dont_touches {
