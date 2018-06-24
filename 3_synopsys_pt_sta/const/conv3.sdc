@@ -1420,17 +1420,17 @@ set_disable_timing pe_c3_r3/mux_out/in0
 
 puts "######## Setting Correct OpCode ########"
 #TODO: Invert Commented Section for Used FuncUnits
-0:pe_c0_r0.func.fu mul7(mul):
-0:pe_c0_r1.func.fu add13(add):
-0:pe_c0_r2.func.fu mul15(mul):
-0:pe_c1_r0.func.fu add12(add):
-0:pe_c1_r1.func.fu add20(add):
-0:pe_c1_r2.func.fu mul18(mul):
-0:pe_c1_r3.func.fu mul3(mul):
-0:pe_c2_r0.func.fu add5(add):
-0:pe_c2_r3.func.fu mul0(mul):
-0:pe_c3_r0.func.fu mul10(mul):
-0:pe_c3_r1.func.fu mul21(mul):
+#0:pe_c0_r0.func.fu mul7(mul):
+#0:pe_c0_r1.func.fu add13(add):
+#0:pe_c0_r2.func.fu mul15(mul):
+#0:pe_c1_r0.func.fu add12(add):
+#0:pe_c1_r1.func.fu add20(add):
+#0:pe_c1_r2.func.fu mul18(mul):
+#0:pe_c1_r3.func.fu mul3(mul):
+#0:pe_c2_r0.func.fu add5(add):
+#0:pe_c2_r3.func.fu mul0(mul):
+#0:pe_c3_r0.func.fu mul10(mul):
+#0:pe_c3_r1.func.fu mul21(mul):
 #0: computation = add_sel;
 #1: computation = mul_sel;
 #2: computation = sub_sel;
