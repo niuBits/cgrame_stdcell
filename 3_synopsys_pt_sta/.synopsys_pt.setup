@@ -15,3 +15,11 @@ set search_path [concat $search_path $OSU_FREEPDK]
 set link_path "* /fs1/eecg/janders/niukuang/Research/repos/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/Liberty/NangateOpenCellLibrary.db"
 
 file mkdir ./reports
+file mkdir ./reports/conv2
+file mkdir ./reports/conv3
+file mkdir ./reports/mac
+file mkdir ./reports/mults1
+file mkdir ./reports/nomem1
+file mkdir ./reports/simple
+file mkdir ./reports/simple2
+file mkdir ./reports/sum

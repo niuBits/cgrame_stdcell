@@ -29,31 +29,25 @@ set_clock_uncertainty 1.2 -setup [get_clocks Config_Clock]
 set_clock_uncertainty 0.5 -hold [get_clocks Config_Clock]
 
 #Read Synopsys Design Constraints
-#source ./const/adres.sdc
-#source ./const/conv2.sdc
-#source ./const/conv3.sdc
-#source ./const/mac.sdc
-#source ./const/mults1.sdc
-#source ./const/nomem1.sdc
-#source ./const/simple.sdc
-#source ./const/simple2.sdc
-#source ./const/sum.sdc
+source ./const/$benchmark.sdc
 
 #Report Timing: (`-max_paths` specifies the numbers of reported worst cases)
 #    1) primary inputs -> FFs
 #    2) FFs -> FFs
 #    3) FFs -> primary outputs
 #    4) primary inputs -> primary outputs
-report_timing -transition_time -capacitance -nets -from [all_inputs] -max_paths 20 -to [all_registers -data_pins] >> ./reports/timing_ins2regs.rpt
-report_timing -transition_time -capacitance -nets -from [all_registers -clock_pins] -max_paths 20 -to [all_registers -data_pins] >> ./reports/timing_regs2regs.rpt
-report_timing -transition_time -capacitance -nets -from [all_registers -clock_pins] -max_paths 20 -to [all_outputs] >> ./reports/timing_regs2outs.rpt
-report_timing -transition_time -capacitance -nets -from [all_inputs] -to [all_outputs] -max_paths 20  >> ./reports/timing_ins2outs.rpt
+report_timing -transition_time -capacitance -nets -from [all_inputs] -max_paths 20 -to [all_registers -data_pins] >> ./reports/$benchmark/timing_ins2regs.rpt
+report_timing -transition_time -capacitance -nets -from [all_registers -clock_pins] -max_paths 20 -to [all_registers -data_pins] >> ./reports/$benchmark/timing_regs2regs.rpt
+report_timing -transition_time -capacitance -nets -from [all_registers -clock_pins] -max_paths 20 -to [all_outputs] >> ./reports/$benchmark/timing_regs2outs.rpt
+report_timing -transition_time -capacitance -nets -from [all_inputs] -to [all_outputs] -max_paths 20  >> ./reports/$benchmark/timing_ins2outs.rpt
 
 #Report Setup Time
-report_timing -transition_time -capacitance -nets -from [all_registers -clock_pins] -to [all_registers -data_pins] -delay_type max >> ./reports/timing_setup.rpt
+report_timing -transition_time -capacitance -nets -from [all_registers -clock_pins] -to [all_registers -data_pins] -delay_type max >> ./reports/$benchmark/timing_setup.rpt
 
 #Report Hold Time
-report_timing -transition_time -capacitance -nets -from [all_registers -clock_pins] -to [all_registers -data_pins] -delay_type min >> ./reports/timing_hold.rpt
+report_timing -transition_time -capacitance -nets -from [all_registers -clock_pins] -to [all_registers -data_pins] -delay_type min >> ./reports/$benchmark/timing_hold.rpt
 
 #Report Capacitance Transition Time at Each Level
-report_timing -transition_time -capacitance -nets -input_pins -from [all_registers -clock_pins] -to [all_registers -data_pins] >> ./reports/timing_capTrans.rpt
+report_timing -transition_time -capacitance -nets -input_pins -from [all_registers -clock_pins] -to [all_registers -data_pins] >> ./reports/$benchmark/timing_capTrans.rpt
+
+quit
