@@ -8,8 +8,8 @@ read_parasitics -format SPEF ./source/spef/cgra.spef
 #TODO: Verify if 1.8GHz can be met
 #Specify 500MHz CGRA_Clock
 ########create_clock -period 2 -waveform [list 0 10] [list CGRA_Clock]
-create_clock -period 2 [get_ports CGRA_Clock]
-set_clock_latency 0.25 [get_clocks CGRA_Clock]
+create_clock -period 0.5 [get_ports CGRA_Clock]
+set_clock_latency 0.10 [get_clocks CGRA_Clock]
 set_clock_transition 0.02 [get_clocks CGRA_Clock]
 set_clock_uncertainty 0.12 -setup [get_clocks CGRA_Clock]
 set_clock_uncertainty 0.05 -hold [get_clocks CGRA_Clock]

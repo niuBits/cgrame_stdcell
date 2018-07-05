@@ -1,5 +1,8 @@
 #!/usr/bin/tclsh
 
+set_false_path -from Config_Clock -to *
+set_false_path -from ConfigIn -to *
+set_false_path -from CGRA_Reset -to *
 puts "######## BEGIN ########"
 puts "######## Disabling Unused Blocks ########"
 #TODO: Comment Out Used PEs From Below

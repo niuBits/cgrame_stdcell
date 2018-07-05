@@ -1,5 +1,8 @@
 #!/usr/bin/tclsh
 
+set_false_path -from Config_Clock -to *
+set_false_path -from ConfigIn -to *
+set_false_path -from CGRA_Reset -to *
 puts "######## BEGIN ########"
 #Operation Mapping Result:
 #mul0(mul): 0:pe_c1_r2.func.fu (module: `func_32b_add_multiply_sub_and_or_xor_shl_ashr_lshr`)
