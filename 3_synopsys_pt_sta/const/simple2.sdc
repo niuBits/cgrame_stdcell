@@ -725,7 +725,7 @@ set_disable_timing pe_c1_r2/mux_bypass/in4
 #set_disable_timing pe_c1_r2/mux_bypass
 #set_disable_timing pe_c1_r2/mux_bypass/*
 
-#pe_c1_r2/mux_out    mux_2to1_32b 0
+#pe_c1_r2/mux_out    mux_2to1_32b 1
 set_case_analysis 1 pe_c1_r2/mux_out/select
 set_disable_timing pe_c1_r2/mux_out/in0
 #set_disable_timing pe_c1_r2/mux_out/in1
